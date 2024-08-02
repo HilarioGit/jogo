@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: black;
+}
+.leitura{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 100;
+    display: none;
+}
+.leitura img{
+    width: 100%;
+    height: 100%;
+   
+}
+.formula{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.formula p{
+    color:#a6a6a6d0;
+    font-size: 12px;
+    margin: 10px;
+}
+.formula h2{
+    margin-left:5%;
+    font-size:60px;
+    font-weight: 100;
+    color:transparent;
+    -webkit-text-stroke: 1px #fff;
+    background:url(../img/back.png);
+    -webkit-background-clip: text;
+    background-position:0 0 ;
+    animation: back 20s linear infinite;
+    margin-bottom:10px ;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+.formula form{
+    width: 330px;
+    padding:10px;
+    border: 1px solid #00ff8846;
+    border-radius: 10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.formula form input{
+    padding: 10px;
+    color:#333;
+    width: 200px;
+    background:none;
+    outline: none;
+    border: 1px solid #00ff88;
+    margin:5px;
+    border-radius:10px ;
+}
+.formula form input[type="button"]{
+    background: #fff;
+    border: none;
+    cursor: pointer;
+}

@@ -1,0 +1,221 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.jogo{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background:linear-gradient(45deg,
+  rgba(0, 0, 0, 0.789) 0%,
+  rgba(0, 0, 0, 0.779) 100%),
+    url(../img/javier-martinez-hUD0PUczwJQ-unsplash.jpg)no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.usuario{
+    width:400px;
+    height: 500px;
+    overflow: hidden;
+    margin-left: 20%;
+    background:linear-gradient(45deg,
+  rgba(0, 0, 0, 0.165) 0%,
+  rgba(0, 0, 0, 0.197) 100%);
+  padding: 10px;
+  display: none;
+    
+}
+ .menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1d1627a1;
+    padding: 10px;
+    border-radius: 10px;
+}
+ .menu img{
+   width: 35px;
+   height: 35px;
+   object-fit: cover;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+.usuario .menu h2{
+    font-size: 12px;
+    margin:8px;
+}
+ .menu a{
+    font-size: 12px;
+    padding: 8px 10px;
+    color:#ffffffc1;
+    text-decoration: none;
+    border: 1px solid #ffffffc1;
+    border-radius: 10px;
+    text-transform: uppercase;
+      letter-spacing: 0.1em;
+}
+ .menu a:hover{
+    background-color: rgb(73, 29, 184);
+    transition: all ease 2s;
+}
+.user_name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 10px;
+}
+.user_name h3{
+    color: #ffff;;
+    font-size: 12px;
+}
+.user_name span{
+    color: hsla(0, 1%, 70%, 0.765);;
+    font-size: 12px;
+}
+.user_name hgroup{
+    margin-top: 10px;
+    height: 350px;
+    overflow-y: auto;
+  
+}
+.user_name hgroup::-webkit-scrollbar{
+    width: 10px;
+}
+.user_name hgroup::-webkit-scrollbar-track{
+    background: #505050;
+    border-radius: 50px;
+}
+.user_name hgroup::-webkit-scrollbar-thumb{
+    background-color: #fff;
+    border-radius: 5px;
+}
+.user_name .perfil{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #392a4ea1;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+}
+.user_name .perfil img{
+    width: 35px;
+    height: 35px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+    overflow: hidden;
+    background:linear-gradient(45deg,
+  rgba(0, 0, 0, 0.165) 0%,
+  rgba(0, 0, 0, 0.197) 100%);
+    padding: 40px 60px;
+}
+h2{
+    font-size: 1rem;
+    color: #fff;
+    text-transform:uppercase;
+    letter-spacing: 0.1em;
+}
+.reset{
+    padding: 10px 15px;
+    color: #3f4644;
+    background: #fff;
+    border: none;
+    outline: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.ntp{
+    background-color: #2d267c;
+    color: #fff;
+}
+.reset:focus{
+    color:#fff;
+    background: #2d267c;
+}
+.ntp:focus{
+    background-color: #e70a36;
+    color: #fff;
+}
+
+.game{
+    width: 300px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    transform-style:preserve-3d;
+    perspective: 500;
+}
+.item{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    background: #fff;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    cursor: pointer;
+}
+ .item.boxOpen{
+    transform: rotateY(0deg);
+ }
+.item:after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background:linear-gradient(45deg,
+  rgb(72, 3, 81) 0%,
+  rgb(6, 76, 238) 100%);
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    backface-visibility: hidden;
+    animation: 5s animar infinite;
+
+}
+@keyframes animar {
+    0%, 40%{
+        background:linear-gradient(45deg,
+        rgb(72, 3, 81) 0%,
+        rgb(6, 76, 238) 100%);
+    }
+    50%, 70%{
+        background:linear-gradient(45deg,
+        rgb(81, 3, 19) 0%,
+        rgb(6, 76, 238) 100%);
+    }
+
+    80%, 100%{
+        background:linear-gradient(45deg,
+        rgb(72, 3, 81) 0%,
+        rgb(95, 238, 6) 100%);
+    }
+}
+.boxOpen:after ,
+ .boxMatch:after{
+    transform: rotateY(180deg);
+}

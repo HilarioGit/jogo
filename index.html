@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./estilo/estilo.css">
+    <link rel="stylesheet" href="./estilo/pou.css">
+    <title>Comunidade_Devs_Angola</title>
+</head>
+<body>
+
+   
+    
+    <section class="jogo">
+        
+    <div class="container">
+        <div class="menu">
+            <img src="./img/IMG_20230708_044228.jpg" alt="">
+            <h2>Dev Hilário Samuel</h2> <br><a href="">Ver perfil</a>
+        </div>
+        <h2>Jogo para Comunidade Devs Angola</h2>
+        <div class="game"></div>
+        <button class="reset" onclick="window.location.reload()">Reiniciar o Jogo </button>
+        <button class="reset ntp">Class Principal Devs Angola</button>
+    </div>
+    <div class="usuario">
+        <div class="menu">
+            <img src="./img/IMG_20230708_044228.jpg" alt="">
+            <h2>Dev Hilário Samuel</h2> <br><a href="https://www.facebook.com/profile.php?id=100090219099674">Ver perfil</a>
+        </div>
+
+        <div class="user_name">
+            <h3>Comunidade_Devs_Angola Gamers</h3>
+            <hgroup>
+            <div class="perfil">
+                <img src="./img/IMG_20230708_044228.jpg" alt="">
+               <span>Membro da class</span> <h3>Hilario samuel</h3>
+            </div>
+           
+           
+           
+            <div class="perfil">
+                <img src="./img/IMG_20230708_044228.jpg" alt="">
+               <span>Membro da class</span> <h3>Hilario samuel</h3>
+            </div>
+            <div class="perfil">
+                <img src="./img/IMG_20230708_044228.jpg" alt="">
+               <span>Membro da class</span> <h3>Hilario samuel</h3>
+            </div>
+            <div class="perfil">
+                <img src="./img/IMG_20230708_044228.jpg" alt="">
+               <span>Membro da class</span> <h3>Hilario samuel</h3>
+            </div>
+         </hgroup>
+        </div>
+
+    </div>
+</section>
+<script src="/main.js"></script>
+
+    <script>
+        const emojis = ["🔓","🔓","🔐","🔐","📸","📸","📷","📷","⌨️","⌨️","🖱️","🖱️","⌚","⌚","🔊","🔊","👟","👟","😷","😷"]
+        var shuf_emojis = emojis.sort(() => (Math.random() > .5) ? 2 : -1);
+
+        for (var i =0; i<emojis.length; i++){
+            let box = document.createElement('div')
+            box.className = 'item';
+            box.innerHTML = shuf_emojis[i]
+            
+            box.onclick = function(){
+                this.classList.add('boxOpen')
+                setTimeout(function(){
+                    if(document.querySelectorAll('.boxOpen').length > 1){
+                        if(document.querySelectorAll('.boxOpen')[0].innerHTML == 
+                        document.querySelectorAll('.boxOpen')[1].innerHTML){
+                            document.querySelectorAll('.boxOpen')[0].classList.add('boxMatch')
+                            document.querySelectorAll('.boxOpen')[1].classList.add('boxMatch')
+
+                              document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen')
+                              document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen')
+
+                              if(document.querySelectorAll('.boxMatch').length == emojis.length){ 
+                                alert('Vocé ganhou o jogo')
+                              }
+
+                        }else{
+                              document.querySelectorAll('.boxOpen')[1].classList.remove('boxOpen')
+                              document.querySelectorAll('.boxOpen')[0].classList.remove('boxOpen')
+                              }
+                    }
+                },500)
+            }
+
+            document.querySelector('.game').appendChild(box)
+        }
+    </script>
+</body>
+</html>
